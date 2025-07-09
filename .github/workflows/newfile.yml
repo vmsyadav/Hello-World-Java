@@ -1,0 +1,14 @@
+name: Check Ubuntu Version
+
+on: [push]
+
+jobs:
+  check-os:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show Ubuntu Version
+        run: |
+          echo "OS Info:"
+          lsb_release -a || cat /etc/os-release
+          echo "Kernel Info:"
+          uname -a
